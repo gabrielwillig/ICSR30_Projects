@@ -1,7 +1,6 @@
 import socket
 import random
 import struct 
-import os
 from utils import SERVER_IP, SERVER_PORT, BUFFER_SIZE, DATA_SIZE, calculate_md5_checksum
 
 class ChecksumFailed(Exception):
@@ -37,8 +36,6 @@ class UDP_Client:
                 print("Any instruction send, just message!")
                 self.client.sendto(message.encode(), (SERVER_IP, SERVER_PORT))
             
-
-
     def get_request(self, msg, file_name):
         self.client.sendto(msg, (SERVER_IP, SERVER_PORT))
         message, addr = self.receive()
@@ -51,6 +48,7 @@ class UDP_Client:
             file = open(f"../duplicate/{file_name}", "wb+")
             while self.last_packet < packets:
                 try:
+                    #time.sleep(1) #Para testar multiplos clientes
                     self.ack_request(file_name, self.last_packet+1, file)
                 except ChecksumFailed:
                     print(f'Checksum failed in packet: {self.last_packet+1}')

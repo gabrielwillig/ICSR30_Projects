@@ -31,7 +31,6 @@ class UDP_Server:
                 continue
             except KeyboardInterrupt:
                 break
-    
 
     def get_request(self, addr, file_name):
         try:
