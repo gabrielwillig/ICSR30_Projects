@@ -75,7 +75,7 @@ class UDP_Client:
             content = message[4:]
             packet_part = struct.unpack(">i", message[0:4])[0]
             if self.corrupt and random.randint(0,100) <= self.packet_lost_probability:
-                print(f"Losing packet: {packet_part}, asking to send again...")
+                print(f"Dropping packet: {packet_part}, asking to send again...")
                 return
             elif packet_part != (self.last_packet + 1):
                 print(f"Wrong package: {packet_part}")
