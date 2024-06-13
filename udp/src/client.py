@@ -45,7 +45,7 @@ class UDP_Client:
             self.last_packet = 0
             print(message)
             packets = int(split[1])
-            file = open(f"../duplicate/{file_name}", "wb+")
+            file = open(f"../../duplicate/{file_name}", "wb+")
             while self.last_packet < packets:
                 try:
                     #time.sleep(1) #Para testar multiplos clientes

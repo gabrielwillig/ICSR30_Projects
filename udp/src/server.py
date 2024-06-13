@@ -34,7 +34,7 @@ class UDP_Server:
 
     def get_request(self, addr, file_name):
         try:
-            with open(f"../assets/{file_name}", 'rb') as f:
+            with open(f"../../assets/{file_name}", 'rb') as f:
                 content = f.read()
                 packets = math.ceil(len(content)/self.data_size)
                 message = f'FOUND {packets} packets!'
