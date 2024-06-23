@@ -15,12 +15,12 @@ class TCP_Client:
         while connected:
             msg = input("> ")
 
-            client.send(msg.encode(FORMAT))
+            self.client.send(msg.encode(FORMAT))
 
             if(msg == DISCONNECT_MSG):
                 connected = False
             else:
-                msg.client.recv(SIZE).decode(FORMAT)
+                msg = self.client.recv(SIZE).decode(FORMAT)
                 print(f"[SERVER] {msg}")
             
 
