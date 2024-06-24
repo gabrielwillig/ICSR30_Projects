@@ -2,9 +2,9 @@ import socket
 import threading
 import math
 import struct
-from utils import SERVER_IP, PORT, DATA_SIZE, BUFFER_SIZE, CHECKSUM_SIZE, PACKET_SIZE, FORMAT, DISCONNECT_MSG, calculate_sha_checksum
+from utils import SERVER_IP, PORT, DATA_SIZE, BUFFER_SIZE, FORMAT, DISCONNECT_MSG, calculate_sha_checksum
 
-IP = SERVER_IP#socket.gethostbyname(socket.gethostname())
+IP = socket.gethostbyname(socket.gethostname())#SERVER_IP
 
 class TCP_Server:
 

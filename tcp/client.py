@@ -1,9 +1,9 @@
 import socket
 import struct 
 import threading
-from utils import PORT, BUFFER_SIZE, CHECKSUM_SIZE, PACKET_SIZE, FORMAT, DISCONNECT_MSG, SERVER_IP, calculate_sha_checksum
+from utils import PORT, BUFFER_SIZE, PACKET_SIZE, FORMAT, DISCONNECT_MSG, SERVER_IP, calculate_sha_checksum
 
-IP = SERVER_IP#socket.gethostbyname(socket.gethostname())
+IP = socket.gethostbyname(socket.gethostname())#SERVER_IP
 
 class ChecksumFailed(Exception):
     pass
@@ -108,11 +108,6 @@ class TCP_Client:
     def receive(self):
         msg = self.client.recv(BUFFER_SIZE)
         return msg
-        # if(msg.startswith(b"[CHECKSUM]")):
-        #     msg = msg.replace(b"[CHECKSUM]", b"")
-        #     self.old_checksum = msg
-        #     return msg
-        # return msg.decode(FORMAT)
 
 if __name__ == "__main__":
     client = TCP_Client()
