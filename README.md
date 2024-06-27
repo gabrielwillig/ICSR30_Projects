@@ -19,3 +19,7 @@ To setup: First, setup the environment, create a folder called assets on the ser
 To run: First, start the server, e.g., `python server.py`,  
 then open your favorite browser and access: `http://<SERVER-IP>:9090`.  
 To GET an Image or a different HTML file than index.html, add a `/file.extension`, after the server URL.
+### Project 4: VLAN
+Exercise performed following the professor's instructions on the Cisco Packet Tracer simulator  
+Part 1: Divide a switch into 2 VLANs and send pings between them.  
+Part 2: Add another switch and perform pings between VLANs of different switches.
