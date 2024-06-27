@@ -14,12 +14,12 @@ To perform a GET request use the following command example:
 `GET filename.extension`.  
 To exit the client, type `!q`. 
 When a client is receiving a file, he cannot listen to server messages.
-### Project 3: HTTP/TCP - Multithreads Web Server
+## Project 3: HTTP/TCP - Multithreads Web Server
 To setup: First, setup the environment, create a folder called assets on the server machine and insert the images and html files  
 To run: First, start the server, e.g., `python server.py`,  
 then open your favorite browser and access: `http://<SERVER-IP>:9090`.  
 To GET an Image or a different HTML file than index.html, add a `/file.extension`, after the server URL.
-### Project 4: VLAN
+## Project 4: VLAN
 Exercise performed following the professor's instructions on the Cisco Packet Tracer simulator  
 Part 1: Divide a switch into 2 VLANs and send pings between them.  
 Part 2: Add another switch and perform pings between VLANs of different switches.
